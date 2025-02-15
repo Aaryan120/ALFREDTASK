@@ -15,7 +15,17 @@ database.dbConnect();
 
 app.use(
     cors({
-        origin:'http://localhost:3000',
+        origin: (origin, callback) => {
+            const allowedOrigins = [
+                "https://alfredtask-raj-aryans-projects-9e1bf71a.vercel.app/",
+                "https://alfredtask-git-main-raj-aryans-projects-9e1bf71a.vercel.app/",
+            ];
+            if (!origin || allowedOrigins.includes(origin)) {
+                callback(null, true);
+            } else {
+                callback(new Error("Not allowed by CORS"));
+            }
+        },
         credentials:true,
     })
 )
