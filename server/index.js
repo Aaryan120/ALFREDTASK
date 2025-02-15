@@ -17,9 +17,9 @@ app.use(
     cors({
         origin: (origin, callback) => {
             const allowedOrigins = [
-                "https://alfredtask-raj-aryans-projects-9e1bf71a.vercel.app/",
-                "https://alfredtask-git-main-raj-aryans-projects-9e1bf71a.vercel.app/",
-                "https://alfredtask.vercel.app/",
+                "https://alfredtask-raj-aryans-projects-9e1bf71a.vercel.app",
+                "https://alfredtask-git-main-raj-aryans-projects-9e1bf71a.vercel.app",
+                "https://alfredtask.vercel.app",
             ];
             if (!origin || allowedOrigins.includes(origin)) {
                 callback(null, true);
